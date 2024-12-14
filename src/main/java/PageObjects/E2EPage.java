@@ -66,7 +66,7 @@ public class E2EPage {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         By msg = By.xpath("//*[contains(text(), '"+ Text +"')]");
         WebElement Pagemsg = wait.until(ExpectedConditions.visibilityOfElementLocated(msg));
-        System.out.println("Tile: " + Pagemsg.getText());
+        System.out.println("Tile:" + Pagemsg.getText());
         try {
             Assert.assertTrue(Pagemsg.getText().contains(Text) & Pagemsg.isDisplayed());
         } catch(Exception e){
