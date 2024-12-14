@@ -1,8 +1,8 @@
 Feature: Login tests
-  As Customer B2B2B, I can login to Bhinneka.com
+  Verify the login functionality for SauceDemo website
 
-  Background: Home page of bhinneka.com
-    Given Login form in login page
+  Background: Login to SauceDemo website
+    Given user login to SauceDemo website
 
   @DataTableHeaders
   Scenario: Login to Bhinneka.com using valid account that registered in personal and corporate account type
@@ -12,9 +12,25 @@ Feature: Login tests
     | your@email.com    | Yourp@ssw0rd | personal and corporate |
     And Click selanjutnya button
 
-  @SimplyDataTable
-  Scenario: Login to Bhinneka.com using valid account that registered in personal account type
-    Given Login page is displayed
-    When Input credentials to login without headers
-      | your@email.com | Yourp@ssw0rd | personal |
-    And Click selanjutnya button
+  @Test1
+  Scenario: Verify Login to SauceDemo website
+    Given Home page is displayed
+
+  @Test2
+  Scenario Outline: verify Login to SauceDemo website using different credentials
+    Given Home page is displayed
+    When user clicks on "Open Menu" button
+    Then user is able to see "Logout" button
+    Then user clicks on "Logout" button
+    Then user is able to see "LOGIN" button
+
+    Then user provided username "<username>" and password "<password>"
+    Then user clicks on "LOGIN" button
+    Then Home page is displayed
+    Examples:
+      | username | password |
+      | problem_user | secret_sauce |
+      | performance_glitch_user | secret_sauce |
+
+
+

@@ -3,8 +3,11 @@ package StepDefinitions;
 import PageObjects.LoginPage;
 import Utilities.TestContext;
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
 import java.util.List;
@@ -12,12 +15,17 @@ import java.util.Map;
 
 public class LoginSteps {
 
+    WebDriver driver;
     TestContext testContext;
     LoginPage loginPage;
 
-    public LoginSteps(TestContext context) {
-        testContext = context;
-        loginPage = testContext.getPageObjectManager().getLoginPage();
+//    public LoginSteps(TestContext context) {
+//        testContext = context;
+//        loginPage = testContext.getPageObjectManager().getLoginPage();
+//    }
+
+    public LoginSteps(){
+        this.driver = Hooks.getDriver();
     }
 
     @Then("Login page is displayed")
@@ -66,5 +74,26 @@ public class LoginSteps {
     @When("Click selanjutnya button")
     public void clickSelanjutnyaButton() {
         loginPage.clickSelanjutnyaButton();
+    }
+
+    @Given("user login to SauceDemo website")
+    public void userLoginToSauceDemoWebsite() {
+//        System.setProperty("webdriver.chrome.driver", "E:\\drivers\\chromedriver.exe");
+//        driver = new ChromeDriver();
+//        driver.get("https://www.saucedemo.com/v1/index.html");
+        loginPage = new LoginPage(driver);
+        loginPage.launchSauceDemoWebsite();
+    }
+
+    @Given("Home page is displayed")
+    public void homePageIsDisplayed() {
+        loginPage = new LoginPage(driver);
+        loginPage.verifyTitle();
+    }
+
+    @Then("user provided username {string} and password {string}")
+    public void userProvidedUsernameAndPassword(String username, String password) {
+        loginPage = new LoginPage(driver);
+        loginPage.userProvidedUsernameAndPassword(username, password);
     }
 }

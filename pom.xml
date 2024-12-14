@@ -49,6 +49,36 @@
             <version>6.10.4</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.4.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>5.0.9</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports-cucumber4-adapter</artifactId>
+            <version>1.0.9</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>compile</scope>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.cucumber.listener</groupId>-->
+<!--            <artifactId>cucumber-spark-reporting</artifactId>-->
+<!--            <version>1.0.0</version> &lt;!&ndash; Update to the latest version &ndash;&gt;-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
+
+
     </dependencies>
 
     <build>
@@ -66,7 +96,7 @@
                     <properties>
                         <property>
                             <name>dataproviderthreadcount</name>
-                            <value>4</value>
+                            <value>1</value>
                         </property>
                     </properties>
                     <testFailureIgnore>true</testFailureIgnore>
