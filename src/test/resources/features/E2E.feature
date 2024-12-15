@@ -3,7 +3,7 @@ Feature: E2E functionality test
   Background: Login to SauceDemo website
     Given user login to SauceDemo website
 
-    @E2EFunc1
+    @E2EFunc1 @ROC
     Scenario: Verify Add To Cart functionality
       Given Home page is displayed
       Then Select the item "Sauce Labs Backpack" for Add To Cart
