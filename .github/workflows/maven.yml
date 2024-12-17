@@ -20,11 +20,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2  # Checkout your repository code
 
-    - name: Set up JDK 8 (AdoptOpenJDK)
+    - name: Set up JDK 8 (Eclipse Temurin)
       uses: actions/setup-java@v2  # Set up the JDK version
       with:
         java-version: ${{ matrix.java }}  # Use Java 8
-        distribution: 'adoptopenjdk'  # Specify the JDK distribution (AdoptOpenJDK/Eclipse Temurin)
+        distribution: 'temurin'  # Use Eclipse Temurin for Java 8
 
     - name: Build with Maven
       run: mvn clean install  # Run Maven build with clean install
