@@ -3,10 +3,10 @@ name: Java CI with Maven
 on:
   push:
     branches:
-      - main  # Trigger on pushes to the main branch
+      - main
   pull_request:
     branches:
-      - main  # Trigger on PRs targeting the main branch
+      - main
 
 jobs:
   build:
@@ -20,10 +20,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2  # Checkout your repository code
 
-    - name: Set up JDK 8
+    - name: Set up JDK 8 (AdoptOpenJDK)
       uses: actions/setup-java@v2  # Set up the JDK version
       with:
         java-version: ${{ matrix.java }}  # Use Java 8
+        distribution: 'adoptopenjdk'  # Specify the JDK distribution (AdoptOpenJDK/Eclipse Temurin)
 
     - name: Build with Maven
       run: mvn clean install  # Run Maven build with clean install
