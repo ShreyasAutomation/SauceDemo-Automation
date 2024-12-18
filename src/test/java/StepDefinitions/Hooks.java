@@ -14,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 
 public class Hooks {
@@ -68,7 +69,15 @@ public class Hooks {
 
         if (driver == null) {
          //   System.setProperty("webdriver.chrome.driver", "E:\\drivers\\chromedriver.exe");
-            driver = new ChromeDriver();
+         //   driver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless");  // Run in headless mode (no GUI)
+            options.addArguments("--no-sandbox"); // Needed for some environments (e.g., GitHub Actions)
+            options.addArguments("--disable-dev-shm-usage"); // Helps with memory issues in Docker/CI environments
+            options.addArguments("--remote-debugging-port=9222"); // Prevents the DevToolsActivePort error
+
+            // Initialize the WebDriver with the specified options
+            WebDriver driver = new ChromeDriver(options);
             driver.get("https://www.saucedemo.com/v1/index.html");
             driver.manage().window().maximize();
 
