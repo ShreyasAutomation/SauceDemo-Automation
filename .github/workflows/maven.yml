@@ -35,7 +35,7 @@ jobs:
           ${{ runner.os }}-maven-
 
     - name: Set up Chrome and Chromedriver
-      uses: browser-actions/setup-chromium@v2  # Set up Chrome and chromedriver on the runner
+      uses: browser-actions/setup-chromium@v1  # Set up Chrome and chromedriver on the runner
       with:
         chromedriver-version: 'latest'  # Specify the version of chromedriver you want (latest is fine)
 
