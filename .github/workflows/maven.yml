@@ -14,7 +14,7 @@ jobs:
 
     strategy:
       matrix:
-        java: [ '8' ]  # Java 8
+        java: ['8']  # Java 8
 
     steps:
     - name: Checkout code
@@ -34,6 +34,11 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-maven-
 
+    - name: Set up Chrome and Chromedriver
+      uses: browser-actions/setup-chromium@v2  # Set up Chrome and chromedriver on the runner
+      with:
+        chromedriver-version: 'latest'  # Specify the version of chromedriver you want (latest is fine)
+
     - name: Run specific test case defined in the Runner class
       run: mvn clean test -Dtest=Runners.TestRunner  # Specify the Runner class
 
@@ -45,4 +50,4 @@ jobs:
         path: target/surefire-reports  # Path where the test reports are stored
 
     - name: Build with Maven
-      run: mvn clean install  # Run Maven build with clean install
+      run: mvn clean install  # Run Maven build with clean install.
