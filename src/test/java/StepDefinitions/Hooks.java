@@ -67,7 +67,7 @@ public class Hooks {
         test = extentReports.createTest(scenario.getName());
 
         if (driver == null) {
-            System.setProperty("webdriver.chrome.driver", "E:\\drivers\\chromedriver.exe");
+         //   System.setProperty("webdriver.chrome.driver", "E:\\drivers\\chromedriver.exe");
             driver = new ChromeDriver();
             driver.get("https://www.saucedemo.com/v1/index.html");
             driver.manage().window().maximize();
