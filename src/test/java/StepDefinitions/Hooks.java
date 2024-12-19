@@ -77,7 +77,7 @@ public class Hooks {
             options.addArguments("--remote-debugging-port=9222"); // Prevents the DevToolsActivePort error
 
             // Initialize the WebDriver with the specified options
-            WebDriver driver = new ChromeDriver(options);
+            driver = new ChromeDriver(options);
             driver.get("https://www.saucedemo.com/v1/index.html");
             driver.manage().window().maximize();
 
