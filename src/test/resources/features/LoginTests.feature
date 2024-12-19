@@ -16,7 +16,7 @@ Feature: Login tests
   Scenario: Verify Login to SauceDemo website
     Given Home page is displayed
 
-  @Test2
+  @Test2 @regression
   Scenario Outline: verify Login to SauceDemo website using different credentials
     Given Home page is displayed
     When user clicks on "Open Menu" button

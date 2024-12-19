@@ -4,7 +4,7 @@ Feature: Homepage tests
   Background: Login to SauceDemo website
     Given user login to SauceDemo website
 
-  @Test3
+  @Test3 @regression
   Scenario: verify the list items in Homepage
     Given Home page is displayed
     Then verifying the list items in Homepage
