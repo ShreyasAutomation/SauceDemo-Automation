@@ -10,7 +10,7 @@ import org.testng.annotations.DataProvider;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "StepDefinitions",
-        tags = " @regression ",
+        tags = " @E2EFunc1 ",
         plugin = {
                 "pretty",
                 "html:target/cucumber-reports/cucumber-pretty.html",
