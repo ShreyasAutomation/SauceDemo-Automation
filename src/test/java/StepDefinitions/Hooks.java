@@ -63,7 +63,7 @@ public class Hooks {
         sparkReporter.config().setTheme(Theme.STANDARD);
     }
 
-    @Before
+    @Before("@UI")
     public void setup(Scenario scenario){
         test = extentReports.createTest(scenario.getName());
 
@@ -92,7 +92,7 @@ public class Hooks {
         return driver;
     }
 
-    @After
+    @After("@UI")
     public void tearDown(Scenario scenario){
         if(scenario.isFailed()){
             test.fail("Test Failed: " + scenario.getName());

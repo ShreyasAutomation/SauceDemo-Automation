@@ -41,4 +41,10 @@ public class E2ESteps {
         e2epage = new E2EPage(driver);
         e2epage.userIsAbleToSeeTheText(text);
     }
+
+    @Then("Select the item which is having price less than 15 dollars")
+    public void selectTheItemWhichIsHavingPriceLessThan$() {
+        e2epage = new E2EPage(driver);
+        e2epage.selectTheItemWhichIsHavingPriceLessThan$();
+    }
 }

@@ -73,4 +73,18 @@ public class E2EPage {
             e.printStackTrace();
         }
     }
+
+    public void selectTheItemWhichIsHavingPriceLessThan$( ) {
+        By amount = By.xpath("//div[@class='inventory_item_price' and number(translate(., '$', '')) < 15.0]/../button");
+   //     By amount = By.xpath("[number(translate(//div[@class='inventory_item_price'],'$','')) > 15.0]");
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        List<WebElement> elements = wait.until(ExpectedConditions.
+                visibilityOfAllElementsLocatedBy(amount));
+
+        for(WebElement ele : elements) {
+        //    System.out.println(ele.getText());
+            ele.click();
+        }
+
+    }
 }
