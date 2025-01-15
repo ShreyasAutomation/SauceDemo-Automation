@@ -1,3 +1,4 @@
+@UI
 Feature: Homepage tests
   Verify the Homepage functionality for SauceDemo website
 

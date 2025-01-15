@@ -1,0 +1,22 @@
+{
+  "name": "Darshan maja",
+  "username": "johndoe42",
+  "email": "john.doe@example.com",
+  "address": {
+    "street": "1234 Elm St",
+    "suite": "Suite 789",
+    "city": "Springfield",
+    "zipcode": "62704",
+    "geo": {
+      "lat": "39.7817",
+      "lng": "-89.6501"
+    }
+  },
+  "phone": "1-555-123-4567",
+  "website": "johnsblog.com",
+  "company": {
+    "name": "Doe Industries",
+    "catchPhrase": "Innovating Tomorrow",
+    "bs": "scalable solutions for next-gen technologies"
+  }
+}

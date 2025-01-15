@@ -1,3 +1,4 @@
+@UI
 Feature: Login tests
   Verify the login functionality for SauceDemo website
 

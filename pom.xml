@@ -71,7 +71,40 @@
             <version>4.12</version>
             <scope>compile</scope>
         </dependency>
-<!--        <dependency>-->
+
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.5.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>6.10.4</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>myzd.example</groupId>
+            <artifactId>selenium.cucumber</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.5.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>3.47.0.0</version>
+        </dependency>
+
+
+
+        <!--        <dependency>-->
 <!--            <groupId>com.cucumber.listener</groupId>-->
 <!--            <artifactId>cucumber-spark-reporting</artifactId>-->
 <!--            <version>1.0.0</version> &lt;!&ndash; Update to the latest version &ndash;&gt;-->
